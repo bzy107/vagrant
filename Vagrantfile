@@ -24,6 +24,10 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder "/Users/bzy107r/git", "/home/bargee/git"
   config.vm.synced_folder "/Users/bzy107r/vagrant", "/home/bargee/vagrant"
 
+  # windows
+  # config.vm.synced_folder "/Users/starw/git", "/home/bargee/git"
+  # config.vm.synced_folder "/Users/starw/vagrant", "/home/bargee/vagrant"
+
   # install docker-compose 
   config.vm.provision "shell",
     run: "always",

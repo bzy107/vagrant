@@ -23,3 +23,24 @@ Bringing machine 'default' up with 'virtualbox' provider...
     default: Warning: Authentication failure. Retrying...
     default: Warning: Authentication failure. Retrying...
 ```
+
+
+
+# windows
+## vagrant upで進まない場合
+
+
+```
+bcdedit
+```
+
+```
+hypervisorlaunchtype    Auto
+```
+上記のようにAutoになっている場合はoffにする
+
+```
+bcdedit /set hypervisorlaunchtype off
+```
+これで`vagrant up`できた  
+[参照](https://turningp.jp/programing/php/laravel/homestead-ssh_error)
