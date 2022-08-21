@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 sudo pkg install vim
 # sudo pkg install git
