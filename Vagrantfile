@@ -1,6 +1,7 @@
 Vagrant.configure(2) do |config|
   # 軽量 Docker付きホストos
-  config.vm.box = "ailispaw/barge"
+  # config.vm.box = "ailispaw/barge"
+  config.vm.box = "ubuntu/lunar64"
   
   config.vm.hostname = "test"
   config.vm.network "private_network", ip: "192.168.56.10"
@@ -21,8 +22,8 @@ Vagrant.configure(2) do |config|
   # config.mutagen.orchestrate = true
 
   # filesync setting
-  config.vm.synced_folder "/Users/bzy107r/git", "/home/bargee/git"
-  config.vm.synced_folder "/Users/bzy107r/vagrant", "/home/bargee/vagrant"
+  config.vm.synced_folder "/Users/bzy107r/git", "/home/vagrant/git"
+  config.vm.synced_folder "/Users/bzy107r/vagrant", "/home/vagrant/vagrant"
 
   # windows
   # config.vm.synced_folder "/Users/starw/git", "/home/bargee/git"
@@ -31,5 +32,5 @@ Vagrant.configure(2) do |config|
   # install docker-compose 
   config.vm.provision "shell",
     run: "always",
-    inline: "/bin/bash /home/bargee/vagrant/install-docker-compose.sh"
+    inline: "/bin/bash /home/vagrant/vagrant/install-docker-compose.sh"
 end
